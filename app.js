@@ -8,6 +8,9 @@ const addbtn = document.getElementById("add-btn")
 const expensestablebody = document.getElementById("expense-list-body")
 const grandTotalCell = document.getElementById("total-amount")
 
+
+
+
 addbtn.addEventListener('click', function (){
     const category = categories.value;
     const name = nameinput.value;
@@ -84,4 +87,13 @@ for (const expense of expenses) {
     nameCell.textContent = expense.name;
     amountCell.textContent = expense.amount;
     deleteCell.appendChild(deleteBtn)
+}
+
+document.getElementById("convert").onclick = function convertCurrency(){
+    let Kshs = 137.54; 
+    let amountofproduct = parseFloat(document.getElementById("amount-of-product").value);
+
+    let converted = amountofproduct / Kshs;
+
+    document.getElementById("converted-amount").textContent = converted + " Dollars";
 }
